@@ -60,10 +60,10 @@
 -(void)setupXHLaunchAd{
     
     /*1.图片开屏广告 - 网络数据 */
-    //[self example01];
+    [self example01];
     
     /*2.图片开屏广告 - 本地数据*/
-    [self example02];
+    //[self example02];
     
     /*3.视频开屏广告 - 网络数据(网络视频只支持缓存OK后下次显示,看效果请二次运行)*/
     //[self example03];
@@ -393,7 +393,7 @@
 #pragma mark - subViews
 -(NSArray<UIView *> *)launchAdSubViews_alreadyView{
     
-    CGFloat y = XH_FULLSCREEN ? 46:22;
+    CGFloat y = XH_STATUSBAR_HEIFHT;
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-140, y, 60, 30)];
     label.text  = @"已预载";
     label.font = [UIFont systemFontOfSize:12];
@@ -408,7 +408,7 @@
 
 -(NSArray<UIView *> *)launchAdSubViews{
     
-    CGFloat y = XH_FULLSCREEN ? 54 : 30;
+    CGFloat y = XH_STATUSBAR_HEIFHT;
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-170, y, 60, 30)];
     label.text  = @"subViews";
     label.font = [UIFont systemFontOfSize:12];
@@ -432,7 +432,7 @@
     button.layer.borderColor = [UIColor lightGrayColor].CGColor;
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:14];
-    CGFloat y = XH_FULLSCREEN ? 54 : 30;
+    CGFloat y = XH_STATUSBAR_HEIFHT;
     button.frame = CGRectMake([UIScreen mainScreen].bounds.size.width-100,y, 85, 30);
     [button addTarget:self action:@selector(skipAction) forControlEvents:UIControlEventTouchUpInside];
     return button;
